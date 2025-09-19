@@ -15,12 +15,16 @@ function SuggestionPage() {
         </LogoBox>
       </Link>
       <Wrapper>
-        <ButtonBox>
-          <SuggestionButton />
-        </ButtonBox>
-        <ButtonBox>
-          <SuggestionCheckButton />
-        </ButtonBox>
+        <Link to="/suggestion_write">
+          <ButtonBox>
+            <SuggestionButton />
+          </ButtonBox>
+        </Link>
+        <Link to="/suggestion_check">
+          <ButtonBox>
+            <SuggestionCheckButton />
+          </ButtonBox>
+        </Link>
       </Wrapper>
       <Menubar/>
     </>

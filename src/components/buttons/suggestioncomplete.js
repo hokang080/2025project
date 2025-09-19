@@ -1,20 +1,20 @@
 import styled from "styled-components";
 
-function JoinButton() {
+function SuggestionComplete() {
   return (
     <>
       <Container>
-        <p>회원가입</p>
+        <p>작성 완료</p>
       </Container>
     </>
   );
 }
-export default JoinButton;
+export default SuggestionComplete;
 
 const Container = styled.div`
-  width: 70%;
+  width: 100%;
   height: 40px;
-  background:rgb(191, 180, 56);
+  background: #7f6448;
   color: #ffffff;
   text-align: center;
   border-radius: 10px;
