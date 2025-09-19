@@ -21,6 +21,9 @@ function LoginPage() {
           <LoginButton />
         </ButtonBox>
         <p>회원이신가요?</p>
+        <ButtonBox>
+          <JoinButton />
+        </ButtonBox>
         {/*  회원가입 버튼 만들어보기 */}
       </Wrapper>
     </>
@@ -32,7 +35,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center; /* 중앙 정렬 */
-
   margin: 0 auto; /* 가운데 정렬 */
 `;
 const LogoBox = styled.div`

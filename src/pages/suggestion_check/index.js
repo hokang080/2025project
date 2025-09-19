@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { LogoIcon } from "../../components/icons/logoIcon";
 import Menubar from "../../components/common/menubar";
 
-function NoticePage() {
+function SuggestionCheck() {
   return (
     <>
       <Link to={"/"}>
@@ -15,7 +15,7 @@ function NoticePage() {
     </>
   );
 }
-export default NoticePage;
+export default SuggestionCheck;
 
 const Wrapper = styled.div`
   width: 80%;

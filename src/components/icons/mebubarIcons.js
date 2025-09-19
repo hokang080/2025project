@@ -1,4 +1,4 @@
-export const SuggestionBox = () => {
+export const SuggestionBox = ({ fillColor = "white" }) => {
   return (
     <svg
       width="50"
@@ -48,7 +48,7 @@ export const Homeiconbox = ({ fillColor = "white" }) => {
 };
 
 
-export const Noticeiconbox = () => {
+export const Noticeiconbox = ({ fillColor = "white" }) => {
   return (
    <svg 
    width="51" 
