@@ -37,7 +37,10 @@ const Wrapper = styled.div`
 
 const LogoBox = styled.div`
   margin: auto;
-  padding-top: 70px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const ButtonBox = styled.div`
