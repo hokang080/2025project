@@ -2,9 +2,10 @@ import styled from 'styled-components';
 import { Link } from "react-router-dom";
 import { LogoIcon } from "../../components/icons/logoIcon";
 import Menubar from "../../components/common/menubar";
-import SugBlock from '../../components/common/sugblock';
+import SugBlockList from '../../components/common/sugblock';
 
 function SuggestionCheck() {
+
   return (
     <>
       <Link to={"/"}>
@@ -13,7 +14,7 @@ function SuggestionCheck() {
         </LogoBox>
       </Link>
       <Wrapper>
-        <SugBlock answer={"답변을 입력하세요"}/>
+        <SugBlockList />
       </Wrapper>
       <Menubar/>
     </>

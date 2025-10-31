@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import CommentIconSVG from "./asset/SVGRepo_iconCarrier.svg";
+import CommentIconSVG from "../../assets/comment-smile-svgrepo-com 1.svg";
+import { Link } from "react-router-dom";
+import { LogoIcon } from "../../components/icons/logoIcon";
+import Menubar from "../../components/common/menubar";
 
 function MySuggestion() {
   // 임시 공지 데이터
@@ -15,15 +18,20 @@ function MySuggestion() {
 
   return (
     <Page>
+      <Link to={"/"}>
+        <LogoBox>
+          <LogoIcon />
+        </LogoBox>
+      </Link>
       <HeaderSpace />
 
       {/* 공지 제목 표시하기 */}
-      <Title>{/* notice.??? */}</Title>
+      <Title>{notice.title}</Title>
 
       <Divider />
 
       {/* 공지 내용 표시하기 */}
-      <Content>{/* notice.??? */}</Content>
+      <Content>{notice.content}</Content>
 
       <Divider />
 
@@ -36,13 +44,14 @@ function MySuggestion() {
 
           {/* 댓글 내용 박스 */}
           <CommentBox>
-            <CommentText>{/* notice.??? */}</CommentText>
+            <CommentText>{notice.comment}</CommentText>
           </CommentBox>
         </CommentRow>
       </CommentSection>
 
       <BackButton>뒤로 가기</BackButton>
       <FooterSpace />
+      <Menubar />
     </Page>
   );
 }
@@ -60,19 +69,9 @@ const Page = styled.div`
 `;
 
 const HeaderSpace = styled.div`
-  height: 80px;
+  height: 10px;
 `;
 
-const AlarmWrap = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-bottom: 6px;
-`;
-
-const AlarmIcon = styled.div`
-  font-size: 58px;
-  color: #2d5f37;
-`;
 
 const Title = styled.h1`
   font-size: 14px;
@@ -148,4 +147,12 @@ const BackButton = styled.button`
 
 const FooterSpace = styled.div`
   height: 110px;
+`;
+
+const LogoBox = styled.div`
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

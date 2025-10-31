@@ -1,14 +1,48 @@
 import styled from "styled-components";
 import SuggestionComplete from "../buttons/suggestioncomplete";
 
-function SugBlock({ answer }) {
+function SugBlockList() {
+
+  const suggestiondata = [
+    {
+      id: 1,
+      title: "건의 제목",
+      content: "건의 내용",
+    },
+        {
+      id: 2,
+      title: "건의 제목",
+      content: "건의 내용",
+    },
+        {
+      id: 3,
+      title: "건의 제목",
+      content: "건의 내용",
+    },
+  ];
+  return (
+    <ListContainer>
+      {suggestiondata.map((item) => (
+        <sugblock
+        Key={item.id}
+        title={item.title}
+        content={item.content}
+        answer={item.answer}
+        />
+      ))}
+    </ListContainer>
+  );
+}
+
+function sugblock({title, content, answer}) {
+
   return (
     <>
       <Container>
-        <h3>건의 제목</h3>
-        <h4>건의 내용</h4>
+        <h3>{title}</h3>
+        <h4>{content}</h4>
         <h4>답변</h4>
-        <Input answer={answer}/>
+        <Input value={answer} readOnly />
         <ButtonBox>
           <SuggestionComplete />
         </ButtonBox>
@@ -16,7 +50,13 @@ function SugBlock({ answer }) {
     </>
   );
 }
-export default SugBlock;
+export default SugBlockList;
+
+const ListContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
 
 const Container = styled.div`
   border: solid 1px #498349;
