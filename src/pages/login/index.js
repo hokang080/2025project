@@ -21,9 +21,11 @@ function LoginPage() {
           <LoginButton />
         </ButtonBox>
         <p>회원이신가요?</p>
+        <Link to={"/join"}>
         <ButtonBox>
           <JoinButton />
         </ButtonBox>
+        </Link>
         {/*  회원가입 버튼 만들어보기 */}
       </Wrapper>
     </>
