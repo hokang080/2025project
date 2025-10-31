@@ -7,6 +7,8 @@ import SuggestionPage from "./pages/suggestion";
 import NoticePage from "./pages/notice";
 import SuggestionWrite from "./pages/suggestion_write";
 import SuggestionCheck from "./pages/suggestion_check";
+import NoticeDetails from "./pages/notice/noticedetail";
+import MySuggestion from "./pages/mysuggestion";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Route path="/notice" element={<NoticePage />}/>
           <Route path="/suggestion_write" element={<SuggestionWrite />} />
           <Route path="/suggestion_check" element={<SuggestionCheck />} />
+          <Route path="/noticedetail" element={<NoticeDetails />} />
+          <Route path="/mysuggestion" element={<MySuggestion />} />
         </Routes>
       </Wrapper>
     </>
