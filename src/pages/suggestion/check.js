@@ -60,7 +60,7 @@ export default function SugBlockList() {
 }
 
 const ListContainer = styled.div`
-  width: 90%;
+  width: 85%;
   max-width: 720px;
   margin: 0 auto;
   padding: 0 16px 90px; /* 아래는 Menubar 공간 */

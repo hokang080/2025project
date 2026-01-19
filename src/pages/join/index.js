@@ -1,4 +1,47 @@
+import styled from "styled-components";
+import AuthInput from "../../components/common/authInput";
+import { Link } from "react-router-dom";
+import { LogoIcon } from "../../components/icons/logoIcon";
+import EndButton from "../../components/buttons/endButton";
+
 function JoinPage() {
-  return <></>;
+  return (
+    <>
+      <Link to={"/"}>
+        <LogoBox>
+          <LogoIcon />
+        </LogoBox>
+      </Link>
+      <Wrapper>
+        <h1>로그인</h1>
+        <AuthInput label={"학번"} placeholder={"학번을 입력해 주세요"} />
+        <AuthInput label={"비밀번호"} placeholder={"비밀번호를 입력해 주세요"} />
+        <AuthInput label={"비밀번호 확인"} placeholder={"비밀번호를 다시 입력해 주세요"} />
+        <ButtonBox>
+          <EndButton />
+        </ButtonBox>
+      </Wrapper>
+    </>
+  );
 }
 export default JoinPage;
+
+const Wrapper = styled.div`
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* 중앙 정렬 */
+  margin: 0 auto; /* 가운데 정렬 */
+`;
+const LogoBox = styled.div`
+  margin: auto;
+  padding-top: 70px;
+`;
+
+const ButtonBox = styled.div`
+  padding: 50px 0;
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
