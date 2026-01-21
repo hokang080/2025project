@@ -9,7 +9,7 @@ import SuggestionCheckButton from '../../components/buttons/suggestionCheck';
 function SuggestionPage() {
   return (
     <>
-      <Link to={"/"}>
+      <Link to={"/home"}>
         <LogoBox>
           <LogoIcon />
         </LogoBox>

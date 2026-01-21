@@ -65,7 +65,8 @@ const Wrapper = styled.div`
   display: block;
 `;
 
-const ContentsBox = styled.div``;
+const ContentsBox = styled.div`
+`;
 
 const Label = styled.div`
   font-size: 18px;

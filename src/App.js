@@ -4,11 +4,13 @@ import TestPage from "./pages/test";
 import HomePage from "./pages/home";
 import LoginPage from "./pages/login";
 import SuggestionPage from "./pages/suggestion";
-import NoticePage from "./pages/notice";
-import SuggestionWrite from "./pages/suggestion_write";
-import SuggestionCheck from "./pages/suggestion_check";
+import SuggestionWrite from "./pages/suggestion/wirte";
+import SuggestionCheck from "./pages/suggestion/check";
 import NoticeDetails from "./pages/notice/noticedetail";
-import MySuggestion from "./pages/mysuggestion";
+import MySuggestion from "./pages/suggestion/mysuggestion";
+import NoticePage from "./pages/notice";
+import NoticeDetail from "./pages/notice/noticedetail";
+import JoinPage from "./pages/join";
 
 function App() {
   return (
@@ -19,11 +21,13 @@ function App() {
           <Route path="/home" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/suggestion" element={<SuggestionPage />} />
-          <Route path="/notice" element={<NoticePage />}/>
           <Route path="/suggestion_write" element={<SuggestionWrite />} />
           <Route path="/suggestion_check" element={<SuggestionCheck />} />
           <Route path="/noticedetail" element={<NoticeDetails />} />
           <Route path="/mysuggestion" element={<MySuggestion />} />
+          <Route path="/notice" element={<NoticePage />} />
+          <Route path="/notice_detail" element={<NoticeDetail />} />
+          <Route path="/join" element={<JoinPage />} />
         </Routes>
       </Wrapper>
     </>

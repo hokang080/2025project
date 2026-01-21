@@ -1,136 +1,145 @@
 import React from "react";
 import styled from "styled-components";
-import Img1 from "./asset/img1.jpg";
+import { Link, useNavigate } from "react-router-dom";
+import { LogoIcon } from "../../components/icons/logoIcon";
+import Menubar from "../../components/common/menubar";
 
 function NoticeDetail() {
-  // 1. 공지사항 임시 데이터 (mock data)
-  const mockNotices = [
-    {
-      id: 1,
-      title: "수학 수행평가 안내",
-      dday: 5,
-      content: `수행평가 내용 어쩌구 저쩌구 화요일까지 해올 것 모르면 교육실로 문의하기`,
-      image: Img1,
-    },
-    {
-      id: 2,
-      title: "과학 프로젝트 공지",
-      dday: 10,
-      content: `조별 과학 실험 준비물 챙기기 안전 수칙 필독`,
-      image: Img1,
-    },
-  ];
+  const navigate = useNavigate();
 
-  // 2. 현재 보고 싶은 공지 ID
-  const noticeId = 1;
-
-  // 3. 배열에서 해당 ID의 공지를 찾기
-  const notice = mockNotices.find((n) => n.id === noticeId);
+  // ✅ 임시 데이터 (나중에 홈에서 state로 넘기거나, 백엔드에서 받아오면 됨)
+  const notice = {
+    id: 1,
+    title: "수학 수행평가 제목",
+    date: "2026-01-19", // 또는 "2026.01.19"
+    content: `수행평가 내용 어쩌구 저쩌구 화요일까지 해올것
+모르면 교무실로`,
+    imageUrl:
+      "https://via.placeholder.com/700x420.png?text=%EA%B3%B5%EC%A7%80%EC%82%AC%ED%95%AD+%EC%82%AC%EC%A7%84",
+  };
 
   return (
     <Page>
-      <TopSpace />
+      <Link to={"/home"}>
+        <LogoBox>
+          <LogoIcon />
+        </LogoBox>
+      </Link>
 
-      {/* 4. 공지가 있으면 화면에 표시하고, 없으면 "없습니다" */}
-      {notice ? (
-        <>
-          <TitleRow>
-            {/* notice 안의 제목(title) 보여주기 */}
-            <TitleText>{/* 여기를 채워보자! : notice.??? */}</TitleText>
+      <HeaderSpace />
 
-            {/* D-day 표시 (숫자일 때만) */}
-            {typeof notice.dday === "number" && (
-              <Dday>{/* 여기를 채워보자: D-{notice.???} */}</Dday>
-            )}
-          </TitleRow>
+      {/* 제목 + 날짜 */}
+      <HeaderRow>
+        <Title>{notice.title}</Title>
+        <DateText>{notice.date}</DateText>
+      </HeaderRow>
 
-          <Card>
-            <ImageBox>
-              {/* 이미지 경로 채워보기 */}
-              <MainImage
-                src={notice.image || Img1}
-                alt="공지 이미지"
-              />
-            </ImageBox>
+      <Divider />
 
-            {/* 본문 내용(content) 채워보기 */}
-            <BodyText>{/* notice.??? */}</BodyText>
-          </Card>
-        </>
-      ) : (
-        <Empty>해당 공지를 찾을 수 없습니다.</Empty>
+      {/* 사진 */}
+      {notice.imageUrl && (
+        <ImageBox>
+          <Image src={notice.imageUrl} alt="공지 사진" />
+        </ImageBox>
       )}
 
-      <BottomSpace />
+      {/* 내용 */}
+      <Content>{notice.content}</Content>
+
+      {/* 뒤로가기(원하면 유지) */}
+      <BackButton onClick={() => navigate(-1)}>뒤로 가기</BackButton>
+
+      {/* 메뉴바 공간 확보 */}
+      <FooterSpace />
+      <Menubar />
     </Page>
   );
 }
 
 export default NoticeDetail;
 
-
-// styled-components 
-
+/* styled-components */
 const Page = styled.div`
-  width: 100%;
+  width: 85%;
   max-width: 414px;
   margin: 0 auto;
   min-height: 100vh;
   background: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 `;
 
-const TopSpace = styled.div`
-  height: 90px;
+const HeaderSpace = styled.div`
+  height: 10px;
 `;
 
-const BottomSpace = styled.div`
-  height: 90px;
-`;
-
-const TitleRow = styled.div`
+const HeaderRow = styled.div`
+  margin: 0 16px 8px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 0 16px 6px;
+  gap: 12px;
 `;
 
-const TitleText = styled.h1`
-  flex: 1;
+const Title = styled.h1`
   font-size: 14px;
   font-weight: 600;
   margin: 0;
+  flex: 1;
 `;
 
-const Dday = styled.div`
-  font-size: 14px;
-  font-weight: 700;
+const DateText = styled.div`
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  flex-shrink: 0;
 `;
 
-const Card = styled.div`
-  margin: 0 16px;
+const Divider = styled.div`
+  height: 1px;
+  background: #a7bfa7;
+  margin: 0 16px 16px;
 `;
 
 const ImageBox = styled.div`
-  width: 100%;
-  border-radius: 16px;
-  overflow: hidden;
-  background: #ddd;
+  margin: 0 16px 14px;
 `;
 
-const MainImage = styled.img`
+const Image = styled.img`
   width: 100%;
+  border-radius: 14px;
   display: block;
+  object-fit: cover;
 `;
 
-const BodyText = styled.p`
-  margin-top: 8px;
+const Content = styled.p`
+  margin: 0 16px 28px;
   font-size: 12px;
   line-height: 1.4;
   color: #222;
   white-space: pre-line;
 `;
 
-const Empty = styled.div`
-  text-align: center;
-  color: #888;
-  margin-top: 100px;
+const BackButton = styled.button`
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  background: #9ab999;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 46px;
+  font-size: 13px;
+  cursor: pointer;
+`;
+
+const FooterSpace = styled.div`
+  height: 110px;
+`;
+
+const LogoBox = styled.div`
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

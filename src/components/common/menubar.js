@@ -10,19 +10,27 @@ function Menubar() {
     <Wrapper>
       <IconBox>
         <Link to="/suggestion">
-          <SuggestionBox fillColor={location.pathname === "/suggestion" ? "#F3CD3F" : "white"} />
+          <SuggestionBox
+            fillColor={location.pathname.startsWith("/suggestion") ? "#F3CD3F" : "white"}
+          />
         </Link>
         <p>익명 건의함</p>
       </IconBox>
+
       <IconBox>
         <Link to="/home">
-          <Homeiconbox fillColor={location.pathname === "/home" ? "#F3CD3F" : "white"} />
+          <Homeiconbox
+            fillColor={location.pathname === "/home" ? "#F3CD3F" : "white"}
+          />
         </Link>
         <p>홈</p>
       </IconBox>
+
       <IconBox>
         <Link to="/notice">
-          <Noticeiconbox fillColor={location.pathname === "/notice" ? "#F3CD3F" : "white"} />
+          <Noticeiconbox
+            fillColor={location.pathname.startsWith("/notice") ? "#F3CD3F" : "white"}
+          />
         </Link>
         <p>공지사항</p>
       </IconBox>
@@ -38,7 +46,7 @@ const Wrapper = styled.div`
   width: 100%; //화면 가로 전체를 차지
   height: 117px;
   display: flex;
-  gap: 30%; // 아이콘 사이 간격 설정
+  gap: 20%; // 아이콘 사이 간격 설정
   align-items: center;
   justify-content: center;
   background-color: #498349;

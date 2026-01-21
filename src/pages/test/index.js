@@ -24,6 +24,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin: auto;
+  /* width: 390px; */
 `;
 const ItemBox = styled.div`
   margin: auto;

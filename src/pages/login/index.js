@@ -32,6 +32,7 @@ function LoginPage() {
 export default LoginPage;
 
 const Wrapper = styled.div`
+  width: 80%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center; /* 중앙 정렬 */

@@ -9,7 +9,7 @@ import SuggestionComplete from '../../components/buttons/suggestioncomplete';
 function SuggestionWrite() {
   return (
     <>
-      <Link to={"/"}>
+      <Link to={"/home"}>
         <LogoBox>
           <LogoIcon />
         </LogoBox>
@@ -29,6 +29,7 @@ function SuggestionWrite() {
 export default SuggestionWrite;
 
 const Wrapper = styled.div`
+  width: 80%;
   display: flex;
   flex-wrap: wrap;  
   justify-content: center; /* 중앙 정렬 */
