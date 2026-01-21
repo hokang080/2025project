@@ -33,6 +33,7 @@ const ContentsBox = styled.div`
   border: 1px solid #97b897;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0 20px;
   p {
     white-space: nowrap; /* 줄바꿈 안 함 */

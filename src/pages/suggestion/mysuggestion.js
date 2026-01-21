@@ -48,7 +48,10 @@ function MySuggestion() {
         </CommentRow>
       </CommentSection>
 
-      <BackButton>뒤로 가기</BackButton>
+      <Link to={"/home"} style={{ textDecoration: "none", color: "inherit" }}>
+        <BackButton>뒤로 가기</BackButton>
+      </Link>
+
       <FooterSpace />
       <Menubar />
     </Page>
@@ -59,8 +62,7 @@ export default MySuggestion;
 
 // styled-components
 const Page = styled.div`
-  width: 85%;
-  max-width: 414px;
+  width: 80%;
   margin: 0 auto;
   min-height: 100vh;
   background: #ffffff;

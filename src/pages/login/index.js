@@ -16,11 +16,11 @@ function LoginPage() {
       <Wrapper>
         <h1>로그인</h1>
         <AuthInput label={"학번"} placeholder={"학번을 입력해 주세요"} />
-        <AuthInput label={"비번"} placeholder={"비번을 입력해 주세요"} />
+        <AuthInput label={"비밀번호"} placeholder={"비밀번호를 입력해 주세요"} />
         <ButtonBox>
           <LoginButton />
         </ButtonBox>
-        <p>회원이신가요?</p>
+        <p>회원이 아니신가요?</p>
         <ButtonBox>
           <JoinButton />
         </ButtonBox>
