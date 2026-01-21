@@ -15,12 +15,12 @@ function SuggestionPage() {
         </LogoBox>
       </Link>
       <Wrapper>
-        <Link to="/suggestion_write">
+        <Link to="/suggestion_write" style={{ textDecoration: "none", color: "inherit" }}>
           <ButtonBox>
             <SuggestionButton />
           </ButtonBox>
         </Link>
-        <Link to="/suggestion_check">
+        <Link to="/suggestion_check" style={{ textDecoration: "none", color: "inherit" }}>
           <ButtonBox>
             <SuggestionCheckButton />
           </ButtonBox>
