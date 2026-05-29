@@ -2,63 +2,69 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { SuggestionBox, Homeiconbox, Noticeiconbox } from "../icons/mebubarIcons";
 import { useLocation } from "react-router-dom";
-// 화면 맨 아래 고정된 메뉴바를 만드는 컴포넌트
+
+// 화면 하단 네비게이션바
 function Menubar() {
   const location = useLocation();
 
   return (
     <Wrapper>
-      <IconBox>
-        <Link to="/suggestion">
-          <SuggestionBox
-            fillColor={location.pathname.startsWith("/suggestion") ? "#F3CD3F" : "white"}
-          />
-        </Link>
+      <IconLink to="/suggestion">
+        <SuggestionBox
+          fillColor={location.pathname.startsWith("/suggestion") ? "#F3CD3F" : "white"}
+        />
         <p>익명 건의함</p>
-      </IconBox>
+      </IconLink>
 
-      <IconBox>
-        <Link to="/home">
-          <Homeiconbox
-            fillColor={location.pathname === "/home" ? "#F3CD3F" : "white"}
-          />
-        </Link>
+      <IconLink to="/home">
+        <Homeiconbox
+          fillColor={location.pathname === "/home" ? "#F3CD3F" : "white"}
+        />
         <p>홈</p>
-      </IconBox>
+      </IconLink>
 
-      <IconBox>
-        <Link to="/notice">
-          <Noticeiconbox
-            fillColor={location.pathname.startsWith("/notice") ? "#F3CD3F" : "white"}
-          />
-        </Link>
+      <IconLink to="/notice">
+        <Noticeiconbox
+          fillColor={location.pathname.startsWith("/notice") ? "#F3CD3F" : "white"}
+        />
         <p>공지사항</p>
-      </IconBox>
+      </IconLink>
     </Wrapper>
   );
 }
 export default Menubar;
 
 const Wrapper = styled.div`
-  position: fixed; //화면 스크롤 여부와 관계없이 고정
-  bottom: 0; //화면 맨 아래에 붙임
-  left: 0; // 왼쪽 모서리에 붙임
-  width: 100%; //화면 가로 전체를 차지
-  height: 117px;
+  width: 100%;
+  height: 90px;
   display: flex;
-  gap: 20%; // 아이콘 사이 간격 설정
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
   background-color: #498349;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  box-sizing: border-box;
+  padding: 10px 20px 20px;
+  flex-shrink: 0;
 `;
 
-const IconBox = styled.div`
+const IconLink = styled(Link)`
+  text-decoration: none;
   color: white;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
   p {
-    font-weight: bold;
-    margin: 0;
+    font-size: 11px;
+    font-weight: 700;
+    margin: 6px 0 0 0;
+  }
+
+  &:hover {
+    opacity: 0.8;
   }
 `;

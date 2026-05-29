@@ -13,14 +13,20 @@ export default SuggestionButton;
 
 const Container = styled.div`
   width: 100%;
-  height: 40px;
+  height: 48px;
   background: #7f6448;
   color: #ffffff;
-  text-align: center;
-  border-radius: 10px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(127, 100, 72, 0.2);
+  transition: all 0.2s ease;
 
   p {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: bold;
+    margin: 0;
+    letter-spacing: 0.5px;
   }
 `;
