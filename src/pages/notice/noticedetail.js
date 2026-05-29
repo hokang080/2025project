@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { LogoIcon } from "../../components/icons/logoIcon";
 import Menubar from "../../components/common/menubar";
 
 function NoticeDetail() {
-  const navigate = useNavigate();
   const location = useLocation();
 
   const notice = location.state?.notice ?? {
@@ -25,7 +24,7 @@ function NoticeDetail() {
           <LogoIcon />
         </LogoHeader>
       </Link>
-      
+
       {/* 스크롤 콘텐츠 영역 */}
       <ScrollArea>
         <DetailCard>

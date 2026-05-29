@@ -7,7 +7,7 @@ function NoticeCard({ content, isNotice, d_day, onClick, onDelete, showDelete = 
         <TextSection>
           <CardText title={content}>{content}</CardText>
         </TextSection>
-        {isNotice && <D_Day>D-{d_day}</D_Day>}
+        {isNotice && <DDay>D-{d_day}</DDay>}
       </CardContent>
       {showDelete && (
         <DeleteAction onClick={onDelete} title="삭제">
@@ -63,7 +63,7 @@ const CardText = styled.p`
   text-overflow: ellipsis;
 `;
 
-const D_Day = styled.div`
+const DDay = styled.div`
   font-weight: 800;
   font-size: 14.5px;
   color: #2d3436;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import AuthInput from "../../components/common/authInput";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { LogoIcon } from "../../components/icons/logoIcon";
 import Menubar from "../../components/common/menubar";
 import EndButton from "../../components/buttons/endButton";
@@ -92,21 +92,21 @@ function NoticePage() {
       <LogoHeader>
         <LogoIcon />
       </LogoHeader>
-      
+
       {/* 스크롤 콘텐츠 영역 */}
       <ScrollArea>
         <PageTitle>우리반 공지사항</PageTitle>
 
         {currentUser?.isLeader && (
           <TabContainer>
-            <TabButton 
-              $active={activeTab === "list"} 
+            <TabButton
+              $active={activeTab === "list"}
               onClick={() => setActiveTab("list")}
             >
               공지 목록
             </TabButton>
-            <TabButton 
-              $active={activeTab === "write"} 
+            <TabButton
+              $active={activeTab === "write"}
               onClick={() => setActiveTab("write")}
             >
               공지 작성
@@ -126,14 +126,14 @@ function NoticePage() {
                 >
                   <NoticeItemHeader>
                     <NoticeItemTitle>{item.title}</NoticeItemTitle>
-                    <D_Day>D-{item.d_day || "5"}</D_Day>
+                    <DDay>D-{item.d_day || "5"}</DDay>
                   </NoticeItemHeader>
-                  
+
                   {item.imageUrl && (
                     <NoticeItemImg src={item.imageUrl} alt={item.title} />
                   )}
                   <NoticeItemDesc>{item.content}</NoticeItemDesc>
-                  
+
                   <NoticeFooterRow>
                     {currentUser?.isLeader && (
                       <DeleteBtn onClick={(e) => handleDelete(item.id, e)}>삭제</DeleteBtn>
@@ -152,7 +152,7 @@ function NoticePage() {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
-            
+
             <UploadSection>
               <UploadLabel>사진 선택</UploadLabel>
               <FileSelectButton as="label">
@@ -178,7 +178,7 @@ function NoticePage() {
               value={content}
               onChange={(e) => setContent(e.target.value)}
             />
-            
+
             <ButtonBox onClick={handleSave}>
               <EndButton />
             </ButtonBox>
@@ -314,7 +314,7 @@ const NoticeItemTitle = styled.h3`
   margin-right: 12px;
 `;
 
-const D_Day = styled.div`
+const DDay = styled.div`
   font-weight: bold;
   font-size: 11px;
   color: #d63031;

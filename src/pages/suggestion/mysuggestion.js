@@ -12,7 +12,7 @@ function MySuggestion() {
 
   const suggestionState = location.state?.suggestion;
 
-  const [suggestion, setSuggestion] = useState(() => {
+  const [suggestion] = useState(() => {
     if (suggestionState?.id) {
       const suggestions = JSON.parse(localStorage.getItem("suggestions") || "[]");
       const found = suggestions.find((s) => s.id === suggestionState.id);
@@ -45,7 +45,7 @@ function MySuggestion() {
           <LogoIcon />
         </LogoHeader>
       </Link>
-      
+
       {/* 스크롤 콘텐츠 영역 */}
       <ScrollArea>
         <DetailCard>
